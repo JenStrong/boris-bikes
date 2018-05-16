@@ -17,7 +17,7 @@ describe DockingStation do
     expect(subject).to respond_to(:dock) #check whether the dock function exists
     a = Bike.new #this is a new instance of the bike class (for example, Azlan's bike)
     expect(subject.dock(a)).to eq "You docked the bike!" #expect when we input a to the docking function within a new instance of the docking station, for it to return this string.
-    expect(subject.bike_docked).to eq a #expect that the bike that's returned is actually Azlan's bike
+    expect(subject.bikes.last).to eq a #expect that the bike that's returned is actually Azlan's bike
   end
 
   it 'raising an error for releasing a bike from an empty dock' do
@@ -25,8 +25,8 @@ describe DockingStation do
   end
 
   it 'raising an error for docking a bike at a full station' do
-    subject.dock(Bike.new)
-    expect{subject.dock(Bike.new)}.to raise_error('Docking station is full')
+    20.times{subject.dock(Bike.new)}
+    expect{ subject.dock(Bike.new) }.to raise_error('Docking station is full')
   end
 
 end
