@@ -12,6 +12,7 @@ class DockingStation
   end
 
   def dock (bike)
+    fail 'Docking station is full' unless @bike_docked.nil?
     @bike_docked = bike
     "You docked the bike!"
   end
