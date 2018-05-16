@@ -1,4 +1,4 @@
-require 'docking_station'
+require 'DockingStation'
 
 describe DockingStation do
   it 'releases a bike' do
