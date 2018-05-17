@@ -24,9 +24,13 @@ describe DockingStation do
     expect{subject.release_bike}.to raise_error('No bikes to be released') #then when we try to relase a second bike, there isn't one there, so we want to check that an error message is being raised.
   end
 
-  it 'raising an error for docking a bike at a full station' do
-    subject.DEFAULT_CAPACITY.times{subject.dock(Bike.new)}
-    expect{ subject.dock(Bike.new) }.to raise_error('Docking station is full')
+
+
+  describe '#dock' do
+    it 'raising an error for docking a bike at a full station' do
+      DockingStation::DEFAULT_CAPACITY.times{subject.dock(Bike.new)}
+      expect{ subject.dock(Bike.new) }.to raise_error('Docking station is full')
+    end
   end
 
 end
