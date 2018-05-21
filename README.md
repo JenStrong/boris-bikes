@@ -1,6 +1,6 @@
 # Boris Bikes 
 
-[Makers Academy](https://www.makersacademy.com/ "Maker's Academy") 
+## [Makers Academy](https://www.makersacademy.com/) 
 ### Week 1 Pair Programming Project
 
 ## Outline
